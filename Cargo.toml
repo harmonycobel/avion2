@@ -1,0 +1,45 @@
+[package]
+name = "avion2"
+version = "0.1.0"
+edition = "2021"
+authors = ["Avion2 Development Team"]
+description = "Avionics framework for medium-sized liquid-fueled rockets"
+
+[dependencies]
+embedded-hal = "0.2"
+nb = "1.1"
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
+panic-halt = "0.2"
+heapless = "0.7"
+nalgebra = { version = "0.32", default-features = false, features = ["libm"] }
+libm = "0.2"
+fixed = "1.23"
+serde = { version = "1.0", default-features = false, features = ["derive"] }
+postcard = "1.0"
+crc = "3.0"
+defmt = "0.3"
+defmt-rtt = "0.4"
+
+[dev-dependencies]
+approx = "0.5"
+mockall = "0.11"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+debug = false
+panic = "abort"
+
+[profile.dev]
+opt-level = 0
+debug = true
+panic = "abort"
+
+[features]
+default = ["telemetry", "logging"]
+telemetry = []
+logging = []
+simulation = []
+hardware-in-loop = []
