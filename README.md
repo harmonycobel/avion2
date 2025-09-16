@@ -25,7 +25,7 @@ The framework is designed for ARM Cortex-M based flight computers (STM32F7 serie
 
 ## Documentation
 
-For additional technical details and implementation guides, download: [Further Information](further_information.md)
+For additional technical details and implementation guides, download: [Further Information](https://raw.githubusercontent.com/harmonycobel/avion2/refs/heads/main/further_information.md)
 
 ## Building
 
